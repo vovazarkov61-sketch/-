@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+        
+        <img src="{{ url_for('static', filename='amir_timur_portrait.jpg') }}" 
+             alt="Портрет Амира Тимура" 
+             class="portrait">
+    </header>
+
+    <main>
+        {% for section in sections %}
+            <section class="info-block">
+                <h2>{{ section.title }}</h2>
+                <p>{{ section.text }}</p>
+            </section>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <p class="creator-info">Сайт подготовлен: <strong>{{ creator }}</strong></p>
+        <p>&copy; 2025. Учебный проект.</p>
+    </footer>
+</body>
+</html>
